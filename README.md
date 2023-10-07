@@ -96,4 +96,107 @@ footer {
 - `width`: Establece un ancho fijo para las imágenes en las caras de las tarjetas.
 - `height`: Ajusta la altura manteniendo la proporción de las imágenes.
 
+
 Esta documentación en formato Markdown puede ser útil si estás considerando integrarla en un archivo README en un repositorio de GitHub o similar, proporcionando claridad y comprensión del código CSS del proyecto del juego de memoria. Si necesitas más detalles o ajustes, no dudes en pedir ayuda adicional.
+
+
+### Documentación del JavaScript del Juego de Memoria
+
+#### Evento de Carga del Documento
+```javascript
+document.addEventListener('DOMContentLoaded', () => { /*...*/ });
+```
+Asegura que el código JS no se ejecute hasta que el HTML haya sido completamente cargado.
+
+#### Variables Globales
+```javascript
+let hasFlippedCard = false;
+let firstCard, secondCard;
+let lockBoard = false;
+let attempts = 0; 
+let matchedPairs = 0; 
+let startTime;
+```
+- `hasFlippedCard`: Bandera que indica si una tarjeta ha sido volteada.
+- `firstCard` y `secondCard`: Almacenan las dos tarjetas seleccionadas para comparar.
+- `lockBoard`: Bandera para evitar clics adicionales mientras se evalúan dos tarjetas.
+- `attempts`: Contador de intentos realizados por el usuario.
+- `matchedPairs`: Contador de pares coincidentes encontrados por el usuario.
+- `startTime`: Almacena la hora de inicio del juego.
+
+#### Función: flipCard
+```javascript
+function flipCard() { /*...*/ }
+```
+Administra el volteo de las tarjetas y establece `firstCard` y `secondCard` basándose en la interacción del usuario.
+
+#### Función: disableCards
+```javascript
+function disableCards() { /*...*/ }
+```
+Elimina el evento `click` de las tarjetas emparejadas para evitar futuras interacciones.
+
+#### Función: checkForMatch
+```javascript
+function checkForMatch() { /*...*/ }
+```
+Verifica si las dos tarjetas seleccionadas son un par y maneja la lógica del juego (incrementa intentos, verifica ganancia).
+
+#### Función: checkForWin
+```javascript
+function checkForWin() { /*...*/ }
+```
+Verifica si el usuario ha encontrado todos los pares y presenta alerta de victoria si es así.
+
+#### Función: unflipCards
+```javascript
+function unflipCards() { /*...*/ }
+```
+Voltea de nuevo las tarjetas si no son un par coincidente después de un corto delay.
+
+#### Función: flipCards
+```javascript
+function flipCards() { /*...*/ }
+```
+Voltea las tarjetas de nuevo si son un par coincidente después de un corto delay.
+
+#### Función: renderBoard
+```javascript
+function renderBoard() { /*...*/ }
+```
+Crea el tablero de juego, mezcla las tarjetas, y les asigna los eventos de clic.
+
+#### Función: hideCardsAfterDelay
+```javascript
+function hideCardsAfterDelay() { /*...*/ }
+```
+Oculta todas las tarjetas en el tablero después de un breve delay y inicia el temporizador del juego.
+
+#### Función: startTimer
+```javascript
+function startTimer() { /*...*/ }
+```
+Inicializa/Reinicia las variables `attempts`, `matchedPairs`, y `startTime` al comenzar el juego.
+
+#### Función: resetGame
+```javascript
+function resetGame() { /*...*/ }
+```
+Reinicia el juego, limpiando el tablero y llamando a `renderBoard` y `hideCardsAfterDelay`.
+
+#### Llamada a Funciones en Carga
+```javascript
+renderBoard(); 
+hideCardsAfterDelay(); 
+```
+Estas funciones se llaman inmediatamente después de cargar la página para configurar el juego.
+
+#### Evento de Botón de Reset
+```javascript
+document.getElementById('reset-button').addEventListener('click', resetGame);
+```
+Establece un evento para el botón de reseteo para comenzar el juego desde cero cuando se hace clic.
+
+---
+
+Esta documentación proporciona una visión de alto nivel de la lógica del juego implementada en JavaScript. Si necesita detalles adicionales sobre alguna función o lógica específica, no dude en preguntar.
