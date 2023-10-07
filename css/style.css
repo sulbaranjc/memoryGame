@@ -1,0 +1,62 @@
+body {
+  background-color: #f8f8f8;
+  font-family: 'Arial', sans-serif;
+}
+
+.container {
+  margin-top: 50px;
+}
+
+.card {
+  width: 200px;
+  height: 200px;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+  position: relative;
+  cursor: pointer;
+}
+
+.card .card-front,
+.card .card-back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.card .card-front {
+  transform: rotateY(180deg);
+}
+
+.card:not(.flipped) {
+  transform: rotateY(180deg);
+}
+
+#game-board {
+  width: 840px; 
+}
+
+footer {
+  margin-top: 20px;
+}
+
+.card .card-front,
+.card .card-back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card .card-front img,
+.card .card-back img {
+    width: 80%;  /* Ajusta el ancho de las imágenes según lo necesites */
+    height: auto; /* Mantiene la proporción de aspecto de las imágenes */
+}
