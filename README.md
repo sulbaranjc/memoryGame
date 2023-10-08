@@ -14,7 +14,7 @@ body {
 #### 2. **Estilo del Contenedor**
 ```css
 .container {
-  margin-top: 50px;
+  margin-top: 10px;
 }
 ```
 - `margin-top`: Añade un espacio en la parte superior de la clase `.container`.
@@ -89,7 +89,7 @@ footer {
 ```css
 .card .card-front img,
 .card .card-back img {
-    width: 80%;
+    width: 100%;
     height: auto;
 }
 ```
